@@ -11,7 +11,7 @@ body {
 #start-screen,
 #game-screen {
   text-align: center;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 #game-screen.show {
@@ -53,6 +53,7 @@ body {
 #word-list {
   list-style-type: none;
   padding: 0;
+
 }
 
 #word-list > li {
@@ -67,4 +68,38 @@ body {
   color: yellow;
   font-size: 1.5em;
   cursor: pointer;
+}
+#winner {
+  position: relative;
+  animation-name: rainbowtext;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbowtext {
+  0%{
+    color:red;
+    font-size: 20px;
+  }
+  25%{
+    color:orange;
+  }
+  50% {
+    color:yellow;
+    font-size: 40px;
+    transform: scaleX(200px);
+  }
+  75%{
+    color: green;
+  }
+
+  85%{
+    color: blue
+  }
+  100% {
+    color: purple;
+    font-size:20px;
+  }
 }
