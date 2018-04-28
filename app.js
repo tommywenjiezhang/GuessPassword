@@ -1,5 +1,5 @@
 $('document').ready(()=> {
-  var wordCount = 10;
+  const wordCount = 10;
   var guessCount = 4;
   var password = ''
 $('#start').click(
@@ -49,13 +49,14 @@ function  updateGame(e){
 
 
     // debugger
-    var MatchScore = compareWords(guess,password)
+    var Matched = compareWords(guess,password)
+    var rightOrWrong = match(Matched)
     console.log(password)
     e.target.classList.add("disabled")
-    e.target.innerText = e.target.innerText + " --> Matching Letters: " + MatchScore;
+    e.target.innerText = `${e.target.innerText}  ${rightOrWrong}`;
     setGuessCount(guessCount - 1);
       // check whether the game is over
-      if (MatchScore === password.length) {
+      if (Matched) {
         $('#winner').toggleClass('hide show')
         $(this).off("click",updateGame)
       } else if (guessCount === 0) {
@@ -65,13 +66,23 @@ function  updateGame(e){
   }
 }
 
-let  compareWords = (word1, word2) =>{
-  if(word1.length !== word2.length) throw "Words must have the same length"
-  var count = 0;
-  for(let i = 0; i < word1.length;i++){
-    if(word1[i] === word2[i]) count++
+let match = (rightOrwrong) => {
+  let str = 'You answer is'
+  if(rightOrwrong){
+    str += " correct"
   }
-  return count;
+  else{
+    str += ' incorrect, try again'
+  }
+return str
+}
+// this function compares the two numbers
+var  compareWords = (word1, word2) =>{
+  // if(word1.length !== word2.length) throw "Words must have the same length"
+  let right = false
+  if(word1 === word2){right = true}
+
+  return right;
 }
 
 })
