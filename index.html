@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="start-screen" class="show">
@@ -17,14 +21,14 @@
 
     </pre>
     <p>Given a list of potential passwords, try to guess the correct one.</p>
-    <p>If you're wrong, we'll tell you how many letters are correct.</p>
+    <p>If you're wrong, we'll tell if your guess are correct.</p>
     <button id="start">Start</button>
   </div>
   <div id="game-screen" class="hide">
     <ul id="word-list"></ul>
-    <p>Click on a word to make a guess.</p>
+    <p>Click on a word to make a guess. Magic happens when you press F12</p>
     <p id="guesses-remaining"></p>
-    <p id="winner" class="hide">Congratulations! You win! <a href="./index.html">Play again?</a></p>
+    <div id="winner" class="hide">Congratulations! You win! <a href="./index.html">Play again?</a></div>
     <p id="loser" class="hide">Sorry, you lost. <a href="./index.html">Play again?</a></p>
   </div>
   <script src="words.js"></script>
